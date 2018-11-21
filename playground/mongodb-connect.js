@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient, ObjectID} = require('mongodb');
 
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
@@ -11,16 +11,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
 
  const db = client.db('TodoApp');
 
-//  db.collection('Todos').insertOne({
-//      text:'something',
-//      completed:false
-//  },(err,result)=>{
-//      if(err){
-//          console.log('error occured while inserting');
-//      }
+ db.collection('Todos').insertOne({
+     text:'something',
+     completed:false
+ },(err,result)=>{
+     if(err){
+         console.log('error occured while inserting');
+     }
 
-//      console.log('result',JSON.stringify(result.ops,undefined,2));
-//  })
+     console.log('result',JSON.stringify(result.ops,undefined,2));
+ })
 
  db.collection('Users').insertOne({
     name:'test',
