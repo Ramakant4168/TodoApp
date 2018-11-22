@@ -1,8 +1,8 @@
 
 
-const { mongoose } = require('../db/mongoose')
-const { User } = require('../models/user')
-const { Todo } = require('../models/todo')
+const { mongoose } = require('./db/mongoose')
+const { User } = require('./models/user')
+const { Todo } = require('./models/todo')
 
 const express = require('express');
 const bodyparser = require('body-parser');
@@ -26,7 +26,17 @@ app.post('/todos', (req, res) => {
     })
 });
 
+app.get("/todos",(req,res)=>{
+    Todo.find().then((todos)=>{
+       res.send({todos});
+    })
+    .catch((e)=>res.status(400).send(er))
+})
+
 
 app.listen((port), () => {
     console.log(`Server started on port ${port}`);
 });
+
+
+module.exports = {app};
