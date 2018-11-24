@@ -6,13 +6,16 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
+    "crypto-js": "^3.1.9-1",
     "expect": "^23.6.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.13",
-    "supertest": "^3.3.0"
+    "supertest": "^3.3.0",
+    "validator": "^10.9.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
